@@ -1,10 +1,5 @@
-import Product, { ProductStatus } from '../../../src/app/product/product.entity'
-
-type ProductType = {
-  id: string
-  name: string
-  price: number
-}
+import { Product } from '../../../src/app/product'
+import { ProductType, ProductStatus } from '../../../src/app/product/types'
 
 const PRODUCT: ProductType = {
   id: '1',

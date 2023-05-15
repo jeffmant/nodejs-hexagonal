@@ -1,19 +1,7 @@
-export interface IProduct {
-  isValid: () => boolean
-  enable: () => void
-  disable: () => void
-  getId: () => string
-  getName: () => string
-  getStatus: () => string
-  getPrice: () => number
-}
+import { IProduct } from './interfaces'
+import { ProductStatus } from './types/product-status.enum'
 
-export enum ProductStatus {
-  ENABLED = 'enabled',
-  DISABLED = 'disabled'
-}
-
-export default class Product implements IProduct {
+export class Product implements IProduct {
   private readonly id: string
   private readonly name: string
   private readonly price: number
