@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-typescript-starter",
+  "name": "nodejs-hexagonal",
   "version": "1.0.0",
-  "description": "A NodeJS starter repo using Typescript, Jest, Husky, Lint Staged and Eslint with Standard Style",
+  "description": "",
   "main": "dist/src/index.js",
   "scripts": {
     "start:dev": "ts-node index.ts",
@@ -10,6 +10,7 @@
     "test": "jest --passWithNoTests",
     "test:staged": "npm run test -- --bail --findRelatedTests ./tests/**",
     "test:unit": "npm run test -- --watchAll --silent",
+    "lint": "eslint ./src ./tests --fix",
     "prepare": "husky install"
   },
   "keywords": [],
