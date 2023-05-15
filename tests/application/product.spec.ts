@@ -26,4 +26,14 @@ describe('Product Unit Tests', () => {
     const sut = makeSut({ ...PRODUCT, price: 0 })
     expect(sut.getStatus()).toBe(ProductStatus.DISABLED)
   })
+
+  it('Should return true if Product is valid', () => {
+    const sut = makeSut(PRODUCT)
+    expect(sut.isValid()).toBe(true)
+  })
+
+  it('Should return false if Product is not valid', () => {
+    const sut = makeSut({ ...PRODUCT, price: 0 })
+    expect(sut.isValid()).toBe(false)
+  })
 })
