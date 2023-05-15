@@ -19,25 +19,34 @@ export default class Product implements IProduct {
   private readonly price: number
   private status: ProductStatus
 
-  constructor (id: string, name: string, price: number, status: ProductStatus) {
+  constructor (id: string, name: string, price: number) {
     this.id = id
     this.name = name
     this.price = price
-    this.status = status
+
+    this.price > 0 ? this.enable() : this.disable()
   }
 
   isValid (): boolean {
     return this.getStatus() === ProductStatus.ENABLED
   }
 
-  enable (): void {
-    this.price > 0
-      ? this.status = ProductStatus.ENABLED
-      : this.status = ProductStatus.DISABLED
+  enable (): boolean {
+    if (this.price > 0) {
+      this.status = ProductStatus.ENABLED
+      return true
+    }
+
+    return false
   }
 
-  disable (): void {
-    this.status = ProductStatus.DISABLED
+  disable (): boolean {
+    if (this.price <= 0) {
+      this.status = ProductStatus.DISABLED
+      return true
+    }
+
+    return false
   }
 
   getId (): string {
