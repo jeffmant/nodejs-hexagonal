@@ -1,4 +1,4 @@
-import Product, { ProductStatus } from '../../src/application/product'
+import Product, { ProductStatus } from '../../../src/app/product/product.entity'
 
 type ProductType = {
   id: string
