@@ -4,7 +4,8 @@ import { ProductType, ProductStatus } from '../../../src/app/product/types'
 const PRODUCT: ProductType = {
   id: '1',
   name: 'Product 1',
-  price: 12.7
+  price: 12.7,
+  status: ProductStatus.ENABLED
 }
 
 const makeSut = (product: ProductType): Product => {
